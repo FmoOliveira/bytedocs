@@ -15,6 +15,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  
+  // Add filters
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByTag("post")
+      .sort((a, b) => b.date - a.date); // Sort by date descending
+  });
+  
+  
 
   // Alias `layout: post` to `layout: layouts/post.njk`
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
@@ -60,6 +68,8 @@ module.exports = function(eleventyConfig) {
 
     return filterTagList([...tagSet]);
   });
+  
+ 
 
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
