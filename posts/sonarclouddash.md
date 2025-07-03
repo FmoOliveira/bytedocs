@@ -106,7 +106,7 @@ pip install -r requirements.txt
 
 Create a `.env` file in the project root:
 
-```env
+```bash
 SONARCLOUD_TOKEN=your_sonarcloud_token
 SONARCLOUD_ORG=your_sonarcloud_organization_key
 AZURE_STORAGE_CONNECTION_STRING=your_azure_storage_connection_string
