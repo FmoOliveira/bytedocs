@@ -2,7 +2,7 @@
 title: C# Flow Control
 description: In this article, we'll explore flow control in csharp
 date: 2025-01-01
-thumbnail: /img/flow_control.png
+#thumbnail: /img/flow_control.png
 tags:
   - post
   - C#
