@@ -1,0 +1,11 @@
+/* Thumbnail image styling for posts */
+.post-thumbnail {
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 720px;   /* Recommended max width */
+  max-height: 480px;  /* Recommended max height (16:9 ratio) */
+  object-fit: cover;  /* Ensures image covers the area without distortion */
+}
