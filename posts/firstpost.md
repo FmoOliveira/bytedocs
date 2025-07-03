@@ -1,10 +1,10 @@
 ---
-title: C# Flow Control.
+title: C# Flow Control
 description: In this article, we'll explore flow control in csharp
 date: 2025-01-01
 tags:
   - post
-  - csharp
+  - C#
 layout: layouts/post.njk
 ---
 
@@ -30,7 +30,7 @@ if (userInput == threshold)
 
 ### Best Practices
 
-1. **Use Clear Conditions** 
+**Use Clear Conditions** 
    The condition inside an `if` statement should be simple and easy to understand. Avoid writing complex or convoluted expressions that make the logic hard to follow. If necessary, break the condition into smaller, meaningful variables or expressions.
 
    **Before:**
@@ -56,7 +56,7 @@ if (userInput == threshold)
 
    
 
-2. **Avoid Nested `if` Statements**
+**Avoid Nested `if` Statements**
    While nesting `if` statements can sometimes be necessary, excessive nesting makes the code hard to follow. Instead of deeply nested `if` blocks, consider **guard clauses**—an early return or exit strategy that reduces nesting, which make your code flatter and easier to read.
 
    **Before:**
@@ -86,7 +86,7 @@ if (userInput == threshold)
 
    
 
-3. **Favor Positive Conditions**
+**Favor Positive Conditions**
    Whenever possible, write conditions in a positive manner. Positive conditions are easier to understand and often make your code more readable. For example, instead of negating a condition, use its positive equivalent.
 
    **Before (Negative Condition):**
@@ -109,7 +109,7 @@ if (userInput == threshold)
 
    
 
-4. **Handle Edge Cases and Errors First (Guard Clauses)**
+**Handle Edge Cases and Errors First (Guard Clauses)**
    Guard clauses allow you to handle edge cases and errors early in your code, preventing unnecessary complexity. By handling invalid conditions upfront, the main logic becomes more readable and manageable.
 
    ```csharp
@@ -128,7 +128,7 @@ if (userInput == threshold)
 
    
 
-5. **Put the Normal Case First**
+**Put the Normal Case First**
    As Steve McConnell suggests in *Code Complete*, always handle the normal or expected case first in an `if` block. This keeps the focus on the main flow of logic, while exceptional cases can be handled afterward. This makes the code easier to follow.
 
    **Before:**
@@ -159,7 +159,7 @@ if (userInput == threshold)
 
    
 
-6. **Consider using `switch` for multiple conditions**
+**Consider using `switch` for multiple conditions**
    When dealing with multiple conditions related to a single variable, a `switch` statement is often more readable than a series of `if-else` blocks. It provides a structured way to handle multiple cases, making it easier to see all the conditions at a glance.
 
    **Before (Multiple `if` Statements):**
@@ -201,7 +201,7 @@ if (userInput == threshold)
 
    
 
-7. **Refactor Complex `if` Logic**
+**Refactor Complex `if` Logic**
    If your `if` conditions become too complex, it's a sign that you should refactor the code. Extracting logic into separate methods or using design patterns (like the **Strategy Pattern**) can simplify decision-making and improve code readability.
 
    ```csharp
@@ -213,7 +213,7 @@ if (userInput == threshold)
 
    
 
-8. **Test and Document Your Conditions**
+**Test and Document Your Conditions**
    Always ensure that your conditions are thoroughly tested, including edge cases, null checks, and unexpected inputs. Use comments to document complex conditions or edge cases, making your code easier to maintain.
 
    ```csharp
@@ -287,7 +287,7 @@ This example uses **relational patterns** and **type patterns** to match differe
 
 ### Advanced Pattern Matching:
 
-1. **Relational Patterns**: You can check ranges of values using conditions like `<` and `>`.
+**Relational Patterns**: You can check ranges of values using conditions like `<` and `>`.
 
    ```csharp
    string WaterState(int temperature) => temperature switch
@@ -298,7 +298,7 @@ This example uses **relational patterns** and **type patterns** to match differe
    };
    ```
 
-2. **Property Patterns**: These allow matching based on object properties.
+**Property Patterns**: These allow matching based on object properties.
 
    ```csharp
    public record Person(string Name, int Age);
@@ -311,7 +311,7 @@ This example uses **relational patterns** and **type patterns** to match differe
    };
    ```
 
-3. **Tuple Patterns**: Useful when working with multiple values.
+**Tuple Patterns**: Useful when working with multiple values.
 
    ```csharp
    string ClassifyCoordinates(int x, int y) => (x, y) switch
@@ -325,9 +325,9 @@ This example uses **relational patterns** and **type patterns** to match differe
 
 ### Best Practices for `switch` Statements:
 
-1. **Always Include a `default` Case**: A `default` case ensures that your program handles unexpected or unhandled values gracefully.
-2. **Keep Cases Short and Concise**: Each case in a `switch` should perform a specific task. If the logic is complex, consider refactoring it into a separate method to keep the `switch` statement readable.
-3. **Use Pattern Matching**: Leverage csharp 8.0+ features for more expressive code.
+**Always Include a `default` Case**: A `default` case ensures that your program handles unexpected or unhandled values gracefully.
+**Keep Cases Short and Concise**: Each case in a `switch` should perform a specific task. If the logic is complex, consider refactoring it into a separate method to keep the `switch` statement readable.
+**Use Pattern Matching**: Leverage csharp 8.0+ features for more expressive code.
 
 
 
@@ -350,8 +350,8 @@ for (int i = 0; i < 5; i++)
 
 ### Best Practices for `for` Loops:
 
-1. **Use Descriptive Variable Names**: Instead of `i`, use meaningful variable names if the context requires it (e.g., `index` or `counter`), especially in nested loops.
-2. **Avoid Magic Numbers**: Rather than hardcoding values like `5` directly in the condition, use a named constant or variable to improve readability.
+**Use Descriptive Variable Names**: Instead of `i`, use meaningful variable names if the context requires it (e.g., `index` or `counter`), especially in nested loops.
+**Avoid Magic Numbers**: Rather than hardcoding values like `5` directly in the condition, use a named constant or variable to improve readability.
 
 ```csharp
 int numberOfIterations = 5;
@@ -378,8 +378,8 @@ while (counter < 5)
 
 ### Best Practices for `while` Loops:
 
-1. **Ensure Your Loop Will Eventually Terminate**: Always update variables inside the loop to ensure the condition will eventually become `false`, avoiding infinite loops.
-2. **Consider Loop Conditions Carefully**: If the condition may never be met or is complex, consider adding a safety mechanism or logging to debug the loop's behavior.
+**Ensure Your Loop Will Eventually Terminate**: Always update variables inside the loop to ensure the condition will eventually become `false`, avoiding infinite loops.
+**Consider Loop Conditions Carefully**: If the condition may never be met or is complex, consider adding a safety mechanism or logging to debug the loop's behavior.
 
 ### The `do-while` Loop
 
@@ -398,7 +398,7 @@ Console.WriteLine($"You entered: {userInput}");
 
 ### Best Practices for `do-while` Loops:
 
-1. **Use When You Want at Least One Execution**: The primary use case for a `do-while` loop is when you need the loop to execute at least once, even if the condition is not met from the start.
+**Use When You Want at Least One Execution**: The primary use case for a `do-while` loop is when you need the loop to execute at least once, even if the condition is not met from the start.
 
 ### The `foreach` Loop
 
@@ -415,8 +415,8 @@ foreach (string fruit in fruits)
 
 ### Best Practices for `foreach` Loops:
 
-1. **Use When Iterating Over Collections**: A `foreach` loop is simpler and more readable than a `for` loop when iterating over collections because you don't need to manage index values manually.
-2. **Avoid Modifying Collections Inside a `foreach`**: Modifying the collection (e.g., adding or removing elements) during iteration can lead to runtime exceptions. If you need to modify the collection, consider using a `for` loop or iterating over a copy of the collection.
+**Use When Iterating Over Collections**: A `foreach` loop is simpler and more readable than a `for` loop when iterating over collections because you don't need to manage index values manually.
+**Avoid Modifying Collections Inside a `foreach`**: Modifying the collection (e.g., adding or removing elements) during iteration can lead to runtime exceptions. If you need to modify the collection, consider using a `for` loop or iterating over a copy of the collection.
 
 
 
@@ -441,9 +441,9 @@ for (int i = 0; i < 10; i++)
 
 ### Best Practices for Using `break`:
 
-1. **Use `break` to Exit Early from Loops When Necessary**: You can use `break` to terminate loops early when a certain condition is met. This can improve performance if continuing the loop would be unnecessary.
-2. **Avoid Overusing `break` in Complex Loops**: While `break` can simplify loop logic, overusing it can make loops harder to understand. Use it sparingly and consider refactoring complex loops to improve readability.
-3. **Always Include `break` in `switch` Statements**: Ensure that each case in a `switch` statement has a `break` (or equivalent control flow like `return` or `throw`), unless you intend to let execution fall through to the next case.
+**Use `break` to Exit Early from Loops When Necessary**: You can use `break` to terminate loops early when a certain condition is met. This can improve performance if continuing the loop would be unnecessary.
+**Avoid Overusing `break` in Complex Loops**: While `break` can simplify loop logic, overusing it can make loops harder to understand. Use it sparingly and consider refactoring complex loops to improve readability.
+**Always Include `break` in `switch` Statements**: Ensure that each case in a `switch` statement has a `break` (or equivalent control flow like `return` or `throw`), unless you intend to let execution fall through to the next case.
 
 ### The `continue` Statement
 
@@ -462,9 +462,9 @@ for (int i = 0; i < 10; i++)
 
 ### Best Practices for Using `continue`:
 
-1. **Use `continue` to Skip Unnecessary Processing**: When certain iterations in a loop don't require further processing, `continue` can help you skip unnecessary steps, making the loop more efficient.
-2. **Avoid Overusing `continue`**: While `continue` can simplify loops, excessive use may make the loop logic harder to follow. Ensure that it is used only when necessary to improve clarity.
-3. **Prefer `continue` Over Complex `if` Logic**: In some cases, using `continue` is clearer than adding multiple nested `if` conditions. For example, instead of writing complex conditional logic inside a loop, you can use `continue` to skip iterations early.
+**Use `continue` to Skip Unnecessary Processing**: When certain iterations in a loop don't require further processing, `continue` can help you skip unnecessary steps, making the loop more efficient.
+**Avoid Overusing `continue`**: While `continue` can simplify loops, excessive use may make the loop logic harder to follow. Ensure that it is used only when necessary to improve clarity.
+**Prefer `continue` Over Complex `if` Logic**: In some cases, using `continue` is clearer than adding multiple nested `if` conditions. For example, instead of writing complex conditional logic inside a loop, you can use `continue` to skip iterations early.
 
 **Before (Complex `if` Condition):**
 

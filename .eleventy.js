@@ -1,7 +1,6 @@
 const { DateTime } = require("luxon");
 const fs = require("fs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
@@ -11,9 +10,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
 
+  // Passthrough copy for search.json so it is available at /search.json
+  eleventyConfig.addPassthroughCopy({ "public/search.json": "search.json" });
+
+  // Passthrough copy for js folder so /js/search.js is available
+  eleventyConfig.addPassthroughCopy("js");
+
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
   
   // Add filters
@@ -76,7 +80,8 @@ module.exports = function(eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true
-  }).use(markdownItAnchor, {
+  })
+  .use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: "after",
       class: "direct-link",
@@ -84,6 +89,14 @@ module.exports = function(eleventyConfig) {
       level: [1,2,3,4],
     }),
     slugify: eleventyConfig.getFilter("slug")
+  })
+  .use(function(md) {
+    // Add line-numbers class to all code blocks
+    const fence = md.renderer.rules.fence;
+    md.renderer.rules.fence = function(tokens, idx, options, env, self) {
+      tokens[idx].attrJoin('class', 'line-numbers');
+      return fence ? fence(tokens, idx, options, env, self) : self.renderToken(tokens, idx, options);
+    };
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
@@ -104,6 +117,16 @@ module.exports = function(eleventyConfig) {
     ui: false,
     ghostMode: false
   });
+
+  // Add a readingTime filter to calculate estimated reading time for posts
+  eleventyConfig.addFilter("readingTime", (text) => {
+    const wordsPerMinute = 200; // Average reading speed
+    const words = text.split(/\s+/g).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `${minutes} min read`;
+  });
+
+  
 
   return {
     // Control which files Eleventy will process

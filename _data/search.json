@@ -1,0 +1,15 @@
+[
+  {
+    "title": "C# Flow Control.",
+    "description": "In this article, we'll explore flow control in csharp",
+    "tags": ["post", "csharp"],
+    "url": "/posts/firstpost/"
+  },
+    {
+        "title": "Visualizing SonarCloud Metrics with Python. Build a Custom Dashboard for Your Code Quality.",
+        "description": "How to harness the SonarCloud API, Python, and Streamlit to create interactive dashboards that give your team real-time insight into code health and project quality",
+        "tags": ["post", "python", "SonarCloud", "Streamlit"],
+        "url": "/posts/sonarclouddash/"
+    }
+    
+]

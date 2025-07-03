@@ -13,15 +13,50 @@ eleventyNavigation:
 <ol reversed class="postlist">
   {% for post in collections['posts'] %}
     <li class="postlist-item">
-      <a href="{{ post.url | url }}" class="postlist-link">
+      {% if post.data.thumbnail %}
+        <div class="post-thumbnail">
+          <img src="{{ post.data.thumbnail | url }}" alt="Thumbnail for {{ post.data.title }}">
+        </div>
+      {% endif %}
+      <a href="{{ post.url | url }}" class="postlist-link" aria-label="Read more about {{ post.data.title }}">
         {{ post.data.title }}
       </a>
+      {% if post.data.tags %}
+        {% set filteredTags = post.data.tags | reject("equalto", "posts") | reject("equalto", "post") %}
+        {% if filteredTags.length > 0 %}
+          <div class="post-tags">
+        {% for tag in filteredTags %}
+          <a href="/tags/{{ tag | slug }}/" class="post-tag">{{ tag }}</a>
+        {% endfor %}
+          </div>
+        {% endif %}
+      {% endif %}
+      {% if post.data.category %}
+        <div class="post-category">
+          <span class="category-label">{{ post.data.category }}</span>
+        </div>
+      {% endif %}
       {% if post.data.description %}
         <p class="post-description">{{ post.data.description }}</p>
       {% endif %}
       <time datetime="{{ post.date | htmlDateString }}">
         {{ post.date | readableDate }}
       </time>
+      <span class="reading-time">{{ post.templateContent | readingTime }}</span>
+      <div class="post-cta">
+        <a href="{{ post.url | url }}" class="btn btn-readmore" aria-label="Read the full post: {{ post.data.title }}">
+          <span aria-hidden="true" style="vertical-align: middle; margin-right: 0.4em; display: inline-block;">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20" style="vertical-align: middle;"><path d="M10.293 15.707a1 1 0 001.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 10-1.414 1.414L13.586 9H4a1 1 0 100 2h9.586l-3.293 3.293a1 1 0 000 1.414z"/></svg>
+          </span>
+          Read more
+        </a>
+        <a href="mailto:?subject={{ post.data.title | urlencode }}&body={{ post.url | url | absoluteUrl(metadata.url) | urlencode }}" class="btn btn-share" title="Share by email" aria-label="Share {{ post.data.title }} via email">
+          <span aria-hidden="true" style="vertical-align: middle; margin-right: 0.4em; display: inline-block;">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20" style="vertical-align: middle;"><path d="M2.94 6.94a1.5 1.5 0 012.12 0L10 11.88l4.94-4.94a1.5 1.5 0 112.12 2.12l-6 6a1.5 1.5 0 01-2.12 0l-6-6a1.5 1.5 0 010-2.12z"/></svg>
+          </span>
+          Share
+        </a>
+      </div>
     </li>
   {% else %}
     <li>No posts to show.</li>

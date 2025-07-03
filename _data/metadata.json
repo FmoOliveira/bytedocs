@@ -2,7 +2,7 @@
   "title": "ByteDocs",
   "url": "https://bytedocs.vercel.app/",
   "language": "en",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+"description": "Always curious, always building.",
   "feed": {
     "subtitle": "I am writing about my experiences as a naval navel-gazer.",
     "filename": "feed.xml",
@@ -14,8 +14,8 @@
     "url": "https://example.com/feed/feed.json"
   },
   "author": {
-    "name": "Your Name Here",
-    "email": "youremailaddress@example.com",
-    "url": "https://example.com/about-me/"
+    "name": "Filipe Oliveira",
+    "email": "fmo.oliveira@gmail.com",
+    "url": "https://www.linkedin.com/in/filipe-oliveira-05724850/"
   }
 }
