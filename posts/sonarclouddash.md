@@ -1,3 +1,14 @@
+---
+title: Visualizing SonarCloud Metrics with Python. Build a Custom Dashboard for Your Code Quality.
+description: How to harness the SonarCloud API, Python, and Streamlit to create interactive dashboards that give your team real-time insight into code health and project quality
+date: 2025-07-03
+tags:
+  - post
+  - python
+  - SonarCloud
+  - Streamlit
+layout: layouts/post.njk
+---
 # Visualizing SonarCloud Metrics with Python: Build a Custom Dashboard for Your Code Quality
 
 *How to harness the SonarCloud API, Python, and Streamlit to create interactive dashboards that give your team real-time insight into code health and project quality.*
