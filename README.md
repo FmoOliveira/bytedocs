@@ -1,70 +1,67 @@
-# Eleventy
+# ByteDocs
 
-This directory is a brief example of a [Eleventy](https://www.11ty.io/) site that can be deployed to Vercel with zero configuration.
+> Always curious, always building.
 
-## Deploy Your Own
+This is the repository for the ByteDocs blog, a personal tech blog by [Filipe Oliveira](https://www.linkedin.com/in/filipe-oliveira-05724850/).
 
-Deploy your own Eleventy project with Vercel.
+## About This Project
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/eleventy&template=eleventy)
+This site is built with [Eleventy](https://www.11ty.io/), a simpler static site generator. It serves as a place to document and share findings, tutorials, and thoughts on software development.
 
-_Live Example: https://eleventy-template.vercel.app_
+The articles cover topics like:
+*   Python development and tooling
+*   Cloud services (like Azure and SonarCloud)
+*   Data visualization with tools like Streamlit
+*   General software engineering practices
 
 ## Getting Started
 
+To run this project locally, you will need Node.js and npm installed.
+
 ### 1. Clone this Repository
 
+```bash
+git clone <this-repository-url> my-blog
 ```
-git clone https://github.com/11ty/eleventy-base-blog.git my-blog-name
-```
+*(Note: Replace `<this-repository-url>` with the actual URL of this repository.)*
 
 ### 2. Navigate to the directory
 
+```bash
+cd my-blog
 ```
-cd my-blog-name
-```
-
-Specifically have a look at `.eleventy.js` to see if you want to configure any Eleventy options differently.
 
 ### 3. Install dependencies
 
-```
+```bash
 npm install
 ```
 
-### 4. Edit _data/metadata.json
+## Running the Project
 
-### 5. Run Eleventy
+You can run the project in a few different ways:
 
-```
-npx eleventy
-```
+*   **Build the site:**
+    ```bash
+    npm run build
+    ```
+    This will create a `_site` directory with the generated static files.
 
-Or build and host locally for local development
-```
-npx eleventy --serve
-```
+*   **Serve the site locally:**
+    ```bash
+    npm start
+    ```
+    This will start a local development server, usually at `http://localhost:8080`, and it will automatically rebuild the site when you make changes.
 
-Or build automatically when a template changes:
-```
-npx eleventy --watch
-```
+*   **Run in debug mode:**
+    ```bash
+    npm run debug
+    ```
 
-Or in debug mode:
-```
-DEBUG=* npx eleventy
-```
+## Project Structure
 
-### Implementation Notes
-
-* `about/index.md` shows how to add a content page.
-* `posts/` has the blog posts but really they can live in any directory. They need only the `post` tag to be added to this collection.
-* Add the `nav` tag to add a template to the top level site navigation. For example, this is in use on `index.njk` and `about/index.md`.
-* Content can be any template format (blog posts needn’t be markdown, for example). Configure your supported templates in `.eleventy.js` -> `templateFormats`.
-	* Because `css` and `png` are listed in `templateFormats` but are not supported template types, any files with these extensions will be copied without modification to the output (while keeping the same directory structure).
-* The blog post feed template is in `feed/feed.njk`. This is also a good example of using a global data files in that it uses `_data/metadata.json`.
-* This example uses three layouts:
-  * `_includes/layouts/base.njk`: the top level HTML structure
-  * `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
-  * `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
-* `_includes/postlist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `index.njk` has an example of how to use it.
+*   `posts/`: Contains the blog posts, typically in Markdown format.
+*   `_data/metadata.json`: Global data and site-wide settings like the title, author, and description.
+*   `_includes/`: Contains the Nunjucks templates and layouts used to structure the pages.
+*   `css/`: Contains the stylesheets.
+*   `.eleventy.js`: The main configuration file for Eleventy.
