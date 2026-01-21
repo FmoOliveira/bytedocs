@@ -1,0 +1,30 @@
+
+> start
+> eleventy --serve
+
+[11ty] Writing _site/LICENSE/index.html from ./LICENSE.md (njk)
+[11ty] Writing _site/sitemap.xml from ./sitemap.xml.njk
+[11ty] Writing _site/feed/feed.xml from ./feed/feed.njk
+[11ty] Writing _site/feed/.htaccess from ./feed/htaccess.njk
+[11ty] Writing _site/feed/feed.json from ./feed/json.njk
+[11ty] Writing _site/posts/firstpost/index.html from ./posts/firstpost.md (njk)
+[11ty] Writing _site/404.html from ./404.md (njk)
+[11ty] Writing _site/posts/csharp-recursion/index.html from ./posts/csharp-recursion.md (njk)
+[11ty] Writing _site/posts/sonarclouddash/index.html from ./posts/sonarclouddash.md (njk)
+[11ty] Writing _site/about/index.html from ./about/index.md (njk)
+[11ty] Writing _site/page-list/index.html from ./page-list.njk
+[11ty] Writing _site/index.html from ./index.njk
+[11ty] Writing _site/posts/index.html from ./archive.njk
+[11ty] Writing _site/tags/index.html from ./tags-list.njk
+[11ty] Writing _site/tags/c/index.html from ./tags.njk
+[11ty] Writing _site/tags/python/index.html from ./tags.njk
+[11ty] Writing _site/tags/sonarcloud/index.html from ./tags.njk
+[11ty] Writing _site/tags/streamlit/index.html from ./tags.njk
+[11ty] Copied 8 files / Wrote 18 files in 0.32 seconds (17.8ms each, v1.0.2)
+[11ty] Watching…
+[Browsersync] Access URLs:
+ ---------------------------------
+    Local: http://localhost:8080
+ External: http://192.168.0.2:8080
+ ---------------------------------
+[Browsersync] Serving files from: _site
