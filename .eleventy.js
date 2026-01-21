@@ -10,9 +10,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
 
-  // Passthrough copy for search.json so it is available at /search.json
-  eleventyConfig.addPassthroughCopy({ "public/search.json": "search.json" });
-
   // Passthrough copy for js folder so /js/search.js is available
   eleventyConfig.addPassthroughCopy("js");
 
