@@ -18,6 +18,7 @@
     
 </head>
 <body class="dark-theme">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
         <div class="title">
@@ -33,7 +34,7 @@
         </nav>
     </header>
 <div class="main-container">
-    <main class="main-content" role="main"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+    <main id="main-content" class="main-content{% if templateClass %} {{ templateClass }}{% endif %}" role="main" tabindex="-1">
         <!-- Main content -->
         {{ content | safe }}
     </main>
