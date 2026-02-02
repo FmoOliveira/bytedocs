@@ -34,7 +34,7 @@
         </nav>
     </header>
 <div class="main-container">
-    <main id="main-content" tabindex="-1" class="main-content" role="main"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+    <main id="main-content" class="main-content{% if templateClass %} {{ templateClass }}{% endif %}" role="main">
         <!-- Main content -->
         {{ content | safe }}
     </main>
