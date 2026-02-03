@@ -7,3 +7,6 @@
 ## 2025-05-15 - [Ghost Features]
 **Learning:** Found fully implemented `readingTime` filter in `.eleventy.js` and `.reading-time` CSS class, but unused in `post.njk`.
 **Action:** Always audit `.eleventy.js` filters and CSS files for "ghost features" before implementing new ones from scratch.
+## 2025-05-20 - Dynamic Search Accessibility
+**Learning:** Adding `aria-live="polite"` to the search results container allows screen readers to announce updates without moving focus, which is critical for instant-search interfaces.
+**Action:** Ensure all dynamic content areas updated via JavaScript have an appropriate `aria-live` attribute.
