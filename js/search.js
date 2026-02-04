@@ -2,6 +2,59 @@ document.addEventListener("DOMContentLoaded", function() {
   const searchInput = document.getElementById("search-input");
   const searchResults = document.getElementById("search-results");
 
+  // Keyboard shortcut '/' to focus search
+  document.addEventListener('keydown', function(event) {
+    if (event.key === '/' &&
+        document.activeElement.tagName !== 'INPUT' &&
+        document.activeElement.tagName !== 'TEXTAREA') {
+      event.preventDefault();
+      searchInput.focus();
+    }
+  });
+
+  // Handle keys in search input
+  searchInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+      searchInput.blur();
+    } else if (event.key === 'ArrowDown') {
+      const firstLink = searchResults.querySelector('a');
+      if (firstLink) {
+        event.preventDefault();
+        firstLink.focus();
+      }
+    }
+  });
+
+  // Handle keys in search results (delegation)
+  searchResults.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+      searchInput.focus();
+    } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      const links = Array.from(searchResults.querySelectorAll('a'));
+      const index = links.indexOf(document.activeElement);
+
+      if (index !== -1) {
+        let nextIndex;
+        if (event.key === 'ArrowDown') {
+          nextIndex = index + 1;
+        } else {
+          nextIndex = index - 1;
+        }
+
+        if (nextIndex >= 0 && nextIndex < links.length) {
+          links[nextIndex].focus();
+        } else if (nextIndex < 0) {
+          searchInput.focus();
+        }
+      }
+    }
+  });
+
   fetch("/search.json")
     .then(response => response.json())
     .then(data => {
