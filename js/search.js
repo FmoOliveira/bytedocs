@@ -58,6 +58,9 @@ document.addEventListener("DOMContentLoaded", function() {
   fetch("/search.json")
     .then(response => response.json())
     .then(data => {
+      const postsMap = new Map();
+      data.forEach(doc => postsMap.set(doc.url, doc));
+
       const idx = lunr(function() {
         this.ref("url");
         this.field("title");
@@ -78,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
           return;
         }
         results.slice(0, 3).forEach(result => {
-          const item = data.find(doc => doc.url === result.ref);
+          const item = postsMap.get(result.ref);
           const li = document.createElement("li");
           li.innerHTML = `<a href="${item.url}">${item.title}</a> - ${item.description}`;
           searchResults.appendChild(li);
