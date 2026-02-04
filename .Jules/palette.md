@@ -10,3 +10,7 @@
 ## 2025-05-20 - Dynamic Search Accessibility
 **Learning:** Adding `aria-live="polite"` to the search results container allows screen readers to announce updates without moving focus, which is critical for instant-search interfaces.
 **Action:** Ensure all dynamic content areas updated via JavaScript have an appropriate `aria-live` attribute.
+
+## 2025-05-21 - Search Keyboard Accessibility
+**Learning:** Implementing global shortcuts (like `/` for search) and arrow-key navigation significantly speeds up interaction for power users and improves accessibility.
+**Action:** When adding search or list interfaces, always include keyboard navigation support (arrows, enter, escape) and visible shortcuts.
