@@ -21,6 +21,32 @@ html, body {
   min-height: 100vh;
 }
 
+/* === Custom Scrollbar === */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lightgray) var(--navy-dark);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--navy-dark);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--lightgray);
+  border-radius: 6px;
+  border: 3px solid var(--navy-dark);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+}
+
 body {
   font-family: 'Inter', 'Roboto', 'Montserrat', 'Poppins', -apple-system, system-ui, sans-serif;
   background-color: var(--background);
