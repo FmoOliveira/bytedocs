@@ -7,7 +7,7 @@ eleventyNavigation:
 
 <h1>Latest Posts</h1>
 
-{% set sortedPosts = collections['posts'] | sort(attribute='date') | reverse %}
+{% set sortedPosts = collections['posts'] %}
 {% set postslist = sortedPosts | head(5) %}
 
 <ol reversed class="postlist">
