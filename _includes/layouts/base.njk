@@ -75,7 +75,7 @@
         <section class="sidebar-widget sidebar-popular">
             <h2>Popular Articles</h2>
             <ul>
-                {% for post in collections.posts | reverse | slice(0, 2) %}
+                {% for post in collections.posts | head(-2) | reverse %}
                 <li>
                     <a href="{{ post.url }}">{{ post.data.title }}</a>
                 </li>
