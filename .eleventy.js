@@ -54,8 +54,9 @@ module.exports = function(eleventyConfig) {
     return Math.min.apply(null, numbers);
   });
 
+  const excludedTags = new Set(["all", "nav", "post", "posts"]);
   function filterTagList(tags) {
-    return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+    return (tags || []).filter(tag => !excludedTags.has(tag));
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
