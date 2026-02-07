@@ -1,5 +1,9 @@
 /* === Global Styles === */
 /* === Global Styles === */
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --lightgray: #3a4652;
   --gray: #b0b0b0;
@@ -187,20 +191,97 @@ nav ul li a:focus::after {
 }
 
 .sidebar {
-  flex: 0 0 20%;
-  max-width: 300px; /* optional fixed width */
-  height: 100%; /* ensures sidebar fills height */
-    box-sizing: border-box; /* ensures padding is included */
+  flex: 0 0 300px;
+  width: 300px;
+  box-sizing: border-box;
+  /* Sticky Positioning */
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
 
-  background-color: var(--navy-dark); /* Slightly darker than var(--navy) */
-  padding: 2.5rem 2rem;
+  /* Visuals */
+  padding: 1rem;
   color: var(--darkgray);
-  overflow-y: auto; /* Add scrollbar if content overflows */
+
+  /* Animation */
   opacity: 0;
   transform: translateY(24px);
   animation: fadeInUp 0.7s cubic-bezier(.4,2,.6,1) 0.1s forwards;
-  display: flex;
-  flex-direction: column;
+}
+
+/* Sidebar Widgets */
+.sidebar-widget {
+  background-color: var(--navy-dark);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-widget h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  color: #fff;
+  display: inline-block;
+}
+
+.sidebar-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-widget ul li {
+    margin-bottom: 0.8rem;
+}
+
+/* Tags Styles */
+.sidebar-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.sidebar-tags-list .post-tag {
+    margin: 0;
+}
+
+/* Connect / Social Styles */
+.sidebar-social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.sidebar-social-links a {
+    color: var(--gray);
+    transition: color 0.2s, transform 0.2s;
+}
+
+.sidebar-social-links a:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+/* Recent Posts */
+.sidebar-recent li a {
+    display: block;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--accent);
+    text-decoration: none;
+}
+.sidebar-recent li a:hover {
+    text-decoration: underline;
+}
+
+.archive-link {
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 /* === Post List === */
@@ -295,17 +376,23 @@ footer {
 }
 
 /* === Search Bar Styles === */
-.search-bar {
-  margin: 1rem 0;
-  padding: 0.5rem;
-  background-color: var(--navy-dark);
-  border-radius: 8px;
+.sidebar-widget.search-bar {
+    display: flex;
+    flex-direction: column;
 }
 
 .search-input-group {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  background: rgba(0,0,0,0.2);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--lightgray);
+  transition: border-color 0.2s;
+}
+.search-input-group:focus-within {
+    border-color: var(--accent);
 }
 
 .search-icon {
@@ -314,19 +401,15 @@ footer {
 
 #search-input {
   flex: 1;
-  width: auto;
-  min-width: 0;
-  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #fff;
   font-size: 1rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 4px;
-  background-color: var(--background);
-  color: var(--darkgray);
 }
 
 #search-input:focus {
   outline: none;
-  border-color: var(--accent);
 }
 
 #search-results {
@@ -338,13 +421,14 @@ footer {
 #search-results li {
   margin: 0.5rem 0;
   padding: 0.5rem;
-  background-color: var(--navy);
+  background-color: rgba(0,0,0,0.3);
   border-radius: 4px;
 }
 
 #search-results li a {
   color: var(--accent);
   text-decoration: none;
+  display: block;
 }
 
 #search-results li a:hover {
@@ -367,12 +451,30 @@ footer {
 
   .sidebar {
     width: 100%;
-    max-width: none;
     flex: none;
-    padding: 2rem;
-    border-top: 1px solid var(--lightgray);
+    position: static;
+    max-height: none;
     overflow-y: visible;
-    height: auto;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--lightgray);
+  }
+
+  .sidebar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.0rem;
+  }
+
+  .sidebar-widget {
+      margin-bottom: 0;
+  }
+
+  .sidebar-widget.archive-link {
+      grid-column: 1 / -1;
+  }
+
+  .search-bar {
+      margin-bottom: 1.5rem;
   }
 
   header {

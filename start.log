@@ -1,0 +1,127 @@
+
+> @ start /app
+> eleventy --serve
+
+[11ty] Writing _site/LICENSE/index.html from ./LICENSE.md (njk)
+[11ty] Writing _site/search.json from ./search-index.njk
+[11ty] Writing _site/sitemap.xml from ./sitemap.xml.njk
+[11ty] Writing _site/feed/feed.xml from ./feed/feed.njk
+[11ty] Writing _site/feed/feed.json from ./feed/json.njk
+[11ty] Writing _site/feed/.htaccess from ./feed/htaccess.njk
+[11ty] Writing _site/posts/csharp-recursion/index.html from ./posts/csharp-recursion.md (njk)
+[11ty] Writing _site/page-list/index.html from ./page-list.njk
+[11ty] Writing _site/posts/sonarclouddash/index.html from ./posts/sonarclouddash.md (njk)
+[11ty] Writing _site/posts/firstpost/index.html from ./posts/firstpost.md (njk)
+[11ty] Writing _site/about/index.html from ./about/index.md (njk)
+[11ty] Writing _site/tags/c/index.html from ./tags.njk
+[11ty] Writing _site/tags/python/index.html from ./tags.njk
+[11ty] Writing _site/tags/sonarcloud/index.html from ./tags.njk
+[11ty] Writing _site/tags/streamlit/index.html from ./tags.njk
+[11ty] Writing _site/tags/index.html from ./tags-list.njk
+[11ty] Writing _site/404.html from ./404.md (njk)
+[11ty] Writing _site/index.html from ./index.njk
+[11ty] Writing _site/posts/index.html from ./archive.njk
+[11ty] Benchmark    305ms  44%    28× (Configuration) "htmlDateString" Nunjucks Filter
+[11ty] Copied 7 files / Wrote 19 files in 0.61 seconds (32.1ms each, v1.0.2)
+[11ty] Watching…
+[Browsersync] Access URLs:
+ -------------------------------
+    Local: http://localhost:8080
+ External: http://0.0.0.0:8080
+ -------------------------------
+[Browsersync] Serving files from: _site
+[11ty] File changed: _includes/layouts/base.njk
+[11ty] Writing _site/LICENSE/index.html from ./LICENSE.md (njk)
+[11ty] Writing _site/search.json from ./search-index.njk
+[11ty] Writing _site/sitemap.xml from ./sitemap.xml.njk
+[11ty] Writing _site/feed/feed.xml from ./feed/feed.njk
+[11ty] Writing _site/feed/.htaccess from ./feed/htaccess.njk
+[11ty] Writing _site/feed/feed.json from ./feed/json.njk
+[11ty] Writing _site/posts/csharp-recursion/index.html from ./posts/csharp-recursion.md (njk)
+[11ty] Writing _site/posts/firstpost/index.html from ./posts/firstpost.md (njk)
+[11ty] Writing _site/posts/sonarclouddash/index.html from ./posts/sonarclouddash.md (njk)
+[11ty] Writing _site/404.html from ./404.md (njk)
+[11ty] Writing _site/index.html from ./index.njk
+[11ty] Writing _site/page-list/index.html from ./page-list.njk
+[11ty] Writing _site/tags/index.html from ./tags-list.njk
+[11ty] Writing _site/posts/index.html from ./archive.njk
+[11ty] Writing _site/about/index.html from ./about/index.md (njk)
+[11ty] Writing _site/tags/c/index.html from ./tags.njk
+[11ty] Writing _site/tags/python/index.html from ./tags.njk
+[11ty] Writing _site/tags/sonarcloud/index.html from ./tags.njk
+[11ty] Writing _site/tags/streamlit/index.html from ./tags.njk
+[11ty] Benchmark     32ms   9%     6× (Configuration) "htmlToAbsoluteUrls" Nunjucks Async Filter
+[11ty] Copied 7 files / Wrote 19 files in 0.34 seconds (17.9ms each, v1.0.2)
+[11ty] Watching…
+[Browsersync] Reloading Browsers...
+[11ty] File changed: css/dark.css
+[11ty] Writing _site/LICENSE/index.html from ./LICENSE.md (njk)
+[11ty] Writing _site/search.json from ./search-index.njk
+[11ty] Writing _site/sitemap.xml from ./sitemap.xml.njk
+[11ty] Writing _site/feed/feed.xml from ./feed/feed.njk
+[11ty] Writing _site/feed/.htaccess from ./feed/htaccess.njk
+[11ty] Writing _site/feed/feed.json from ./feed/json.njk
+[11ty] Writing _site/posts/csharp-recursion/index.html from ./posts/csharp-recursion.md (njk)
+[11ty] Writing _site/posts/firstpost/index.html from ./posts/firstpost.md (njk)
+[11ty] Writing _site/posts/sonarclouddash/index.html from ./posts/sonarclouddash.md (njk)
+[11ty] Writing _site/404.html from ./404.md (njk)
+[11ty] Writing _site/index.html from ./index.njk
+[11ty] Writing _site/posts/index.html from ./archive.njk
+[11ty] Writing _site/page-list/index.html from ./page-list.njk
+[11ty] Writing _site/tags/index.html from ./tags-list.njk
+[11ty] Writing _site/tags/c/index.html from ./tags.njk
+[11ty] Writing _site/tags/python/index.html from ./tags.njk
+[11ty] Writing _site/tags/sonarcloud/index.html from ./tags.njk
+[11ty] Writing _site/tags/streamlit/index.html from ./tags.njk
+[11ty] Writing _site/about/index.html from ./about/index.md (njk)
+[11ty] Copied 7 files / Wrote 19 files in 0.17 seconds (8.9ms each, v1.0.2)
+[11ty] Watching…
+[Browsersync] Reloading files that match: *.css
+[11ty] File changed: css/dark.css
+[11ty] Writing _site/LICENSE/index.html from ./LICENSE.md (njk)
+[11ty] Writing _site/search.json from ./search-index.njk
+[11ty] Writing _site/sitemap.xml from ./sitemap.xml.njk
+[11ty] Writing _site/feed/feed.xml from ./feed/feed.njk
+[11ty] Writing _site/feed/.htaccess from ./feed/htaccess.njk
+[11ty] Writing _site/feed/feed.json from ./feed/json.njk
+[11ty] Writing _site/posts/csharp-recursion/index.html from ./posts/csharp-recursion.md (njk)
+[11ty] Writing _site/posts/firstpost/index.html from ./posts/firstpost.md (njk)
+[11ty] Writing _site/posts/sonarclouddash/index.html from ./posts/sonarclouddash.md (njk)
+[11ty] Writing _site/404.html from ./404.md (njk)
+[11ty] Writing _site/posts/index.html from ./archive.njk
+[11ty] Writing _site/index.html from ./index.njk
+[11ty] Writing _site/page-list/index.html from ./page-list.njk
+[11ty] Writing _site/tags/index.html from ./tags-list.njk
+[11ty] Writing _site/tags/c/index.html from ./tags.njk
+[11ty] Writing _site/tags/python/index.html from ./tags.njk
+[11ty] Writing _site/tags/sonarcloud/index.html from ./tags.njk
+[11ty] Writing _site/tags/streamlit/index.html from ./tags.njk
+[11ty] Writing _site/about/index.html from ./about/index.md (njk)
+[11ty] Copied 7 files / Wrote 19 files in 0.20 seconds (10.5ms each, v1.0.2)
+[11ty] Watching…
+[Browsersync] Reloading files that match: *.css
+[11ty] File changed: css/dark.css
+[11ty] Writing _site/LICENSE/index.html from ./LICENSE.md (njk)
+[11ty] Writing _site/search.json from ./search-index.njk
+[11ty] Writing _site/sitemap.xml from ./sitemap.xml.njk
+[11ty] Writing _site/feed/feed.xml from ./feed/feed.njk
+[11ty] Writing _site/feed/.htaccess from ./feed/htaccess.njk
+[11ty] Writing _site/feed/feed.json from ./feed/json.njk
+[11ty] Writing _site/posts/csharp-recursion/index.html from ./posts/csharp-recursion.md (njk)
+[11ty] Writing _site/posts/firstpost/index.html from ./posts/firstpost.md (njk)
+[11ty] Writing _site/posts/sonarclouddash/index.html from ./posts/sonarclouddash.md (njk)
+[11ty] Writing _site/404.html from ./404.md (njk)
+[11ty] Writing _site/posts/index.html from ./archive.njk
+[11ty] Writing _site/index.html from ./index.njk
+[11ty] Writing _site/page-list/index.html from ./page-list.njk
+[11ty] Writing _site/tags/index.html from ./tags-list.njk
+[11ty] Writing _site/about/index.html from ./about/index.md (njk)
+[11ty] Writing _site/tags/c/index.html from ./tags.njk
+[11ty] Writing _site/tags/python/index.html from ./tags.njk
+[11ty] Writing _site/tags/sonarcloud/index.html from ./tags.njk
+[11ty] Writing _site/tags/streamlit/index.html from ./tags.njk
+[11ty] Copied 7 files / Wrote 19 files in 0.19 seconds (10.0ms each, v1.0.2)
+[11ty] Watching…
+[Browsersync] Reloading files that match: *.css
+Terminated
+ ELIFECYCLE  Command failed with exit code 143.
