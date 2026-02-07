@@ -120,7 +120,13 @@ module.exports = function(eleventyConfig) {
   // Add a readingTime filter to calculate estimated reading time for posts
   eleventyConfig.addFilter("readingTime", (text) => {
     const wordsPerMinute = 200; // Average reading speed
-    const words = text.split(/\s+/g).length;
+    let words = 0;
+    const matches = text.matchAll(/\s+/g);
+    for (const match of matches) {
+      words++;
+    }
+    words++; // matchAll counts separators, so words = separators + 1 (equivalent to split length)
+
     const minutes = Math.ceil(words / wordsPerMinute);
     return `${minutes} min read`;
   });
