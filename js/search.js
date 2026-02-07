@@ -91,7 +91,16 @@ document.addEventListener("DOMContentLoaded", function() {
       // Do not show any results by default
       searchResults.innerHTML = "";
 
-      searchInput.addEventListener("input", function() {
+      function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+          const context = this;
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+      }
+
+      searchInput.addEventListener("input", debounce(function() {
         const query = searchInput.value.trim();
         if (query.length === 0) {
           searchResults.innerHTML = "";
@@ -99,6 +108,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         const results = idx.search(query);
         renderResults(results);
-      });
+      }, 300));
     });
 });
