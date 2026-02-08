@@ -22,7 +22,8 @@ eleventyNavigation:
         {% if filteredTags.length > 0 %}
           <div class="post-tags">
         {% for tag in filteredTags %}
-          <a href="/tags/{{ tag | slug }}/" class="post-tag">{{ tag }}</a>
+          {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+          <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
         {% endfor %}
           </div>
         {% endif %}

@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  fetch("/search.json")
+  fetch(window.searchIndexUrl || "/search.json")
     .then(response => response.json())
     .then(data => {
       const postsMap = new Map();
