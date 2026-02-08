@@ -92,7 +92,10 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-<script src="/js/search.js"></script>
+<script>
+  window.searchIndexUrl = "{{ '/search.json' | url }}";
+</script>
+<script src="{{ '/js/search.js' | url }}"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 
 <footer role="contentinfo">
